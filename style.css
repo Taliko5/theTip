@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Cormorant SC", serif;
+}
+
+#carouselExampleControls {
+  border: 1px solid pink;
+}
+
+.item {
+  position: relative;
+  /* height: 100%; */
+}
+
+.carousel-caption{
+        position: absolute;
+    left: 15%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #000;
+}
+.carousel-inner {
+  /* width: 100vw;
+  height: 100%; */
+  border: 1px solid green;
+}
+
+.carousel-item img {
+  width: 60%;
+  
+   margin: 50% auto;
+  transform: translateY(-50%); */
+}
+/* .carousel-item {
+  width: 400px;
+height: 600px;
+} */
+
+/* .carousel-control-next,
+.carousel-control-prev {
+    position: absolute !important;
+    top: 50% !important;
+} */
