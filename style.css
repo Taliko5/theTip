@@ -11,6 +11,12 @@ h1 {
   font-family: "Playfair Display", serif;
   font-size: 28px;
 }
+h2 {
+  font-family: "Playfair Display";
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 400;
+}
 /* unvisited link */
 a:link {
   color: green;
@@ -43,7 +49,7 @@ a:hover {
   border: none;
 }
 .card-text {
-  height: 4rem;
+  height: 5rem;
   font-size: 3rem;
 }
 

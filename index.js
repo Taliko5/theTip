@@ -178,30 +178,35 @@ const dataLists = [
   }
 ];
 
-dataLists.map(el => {
+dataLists.map((el, idx, arr) => {
   const card = document.getElementById("cardSet");
   const cardCopy = card.cloneNode(true);
   const title = cardCopy.querySelector("#artistName");
   const img = cardCopy.querySelector("#slideImg");
   const dllist = cardCopy.querySelector("#dlLink");
-
+  const body1 = cardCopy.querySelector("#body1");
+  const body2 = cardCopy.querySelector("#body2");
   // adding title and artist name
   el.title !== ""
-    ? (title.innerHTML = `${el.artist},${el.title}`)
-    : (title.innerHTML = `${el.artist}`);
+    ? (title.innerHTML = `<h1> ${el.artist}  </h1><p/>  <h2>${el.title}  </h2>`)
+    : (title.innerHTML = `<h1>${el.artist}</h1>`);
 
   // adding images
   img.setAttribute("src", `${el.mainImg}`);
   // adding dl images
   el.dlPc !== "" && el.dlPhone !== ""
-    ? (dllist.innerHTML = `<a href=${el.dlPc} download>DL(PC)</a> <a href=${el.dlPhone} download>DL(smartPhone)</a>`)
+    ? (dllist.innerHTML = `<h1><a href=${el.dlPc} download>DL(PC)</a> <a href=${el.dlPhone} download>DL(smartPhone)</a></h1>`)
     : el.dlPc === ""
-    ? (dllist.innerHTML = `<a href=${el.dlPhone} download>DL(smartPhone)</a>`)
-    : (dllist.innerHTML = `<a href=${el.dlPc} download>DL(PC)</a>`);
+    ? (dllist.innerHTML = `<h1><a href=${el.dlPhone} download>DL(smartPhone)</a></h1>`)
+    : (dllist.innerHTML = `<h1><a href=${el.dlPc} download>DL(PC)</a></h1>`);
 
-  cardCopy.appendChild(title);
-  cardCopy.appendChild(img);
-  cardCopy.appendChild(dllist);
-  card.appendChild(cardCopy)
+  body1.appendChild(title);
+  body1.appendChild(img);
+  body2.appendChild(dllist);
 
+  const carousel = document.querySelector(".carousel-inner");
+  // document.body.appendChild(cardCopy)
+  console.log(carousel);
+  Math.floor(Math.random * arr.length);
+  carousel.insertBefore(cardCopy, carousel.children[2]);
 });
