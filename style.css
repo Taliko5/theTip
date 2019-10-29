@@ -22,7 +22,6 @@ a:hover {
   text-decoration: none;
 }
 
-
 #carouselExampleControls {
   margin: 50px 0px 0px 0px;
 }
@@ -107,7 +106,7 @@ a:hover {
 
   .carousel-control-next,
   .carousel-control-prev {
-    width: 48% !important;
+    width: 30% !important;
     height: 500px;
     max-height: 500px;
   }

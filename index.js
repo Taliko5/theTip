@@ -1,3 +1,5 @@
-document.querySelector("#mainCarousel").carousel({
-  interval: 100
-});
+import dataList from './imgInfos';
+
+const dataList.map((el,idx,arr)=>{
+    
+})
