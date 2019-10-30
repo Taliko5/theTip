@@ -178,7 +178,10 @@ const dataLists = [
   }
 ];
 
-dataLists.map((el, idx, arr) => {
+const randomCards = () => {
+  const rdmIdx = Math.floor(Math.random() * dataLists.length);
+  const rdmEl = dataLists[rdmIdx];
+
   const card = document.getElementById("cardSet");
   const cardCopy = card.cloneNode(true);
   const title = cardCopy.querySelector("#artistName");
@@ -186,10 +189,6 @@ dataLists.map((el, idx, arr) => {
   const dllist = cardCopy.querySelector("#dlLink");
   const body1 = cardCopy.querySelector("#body1");
   const body2 = cardCopy.querySelector("#body2");
-
-  let rdmIdx = Math.floor(Math.random() * arr.length);
-  const rdmEl = arr[rdmIdx];
-  // console.log(rdmEl);
 
   // adding title and artist name
   rdmEl.title !== ""
@@ -210,8 +209,9 @@ dataLists.map((el, idx, arr) => {
   body2.appendChild(dllist);
 
   const carousel = document.querySelector(".carousel-inner");
-  // document.body.appendChild(cardCopy)
-  // console.log(carousel);
+  carousel.insertBefore(cardCopy, carousel.children[]);
+};
 
-  carousel.insertBefore(cardCopy, carousel.children[2]);
-});
+const button = document.querySelector("#click");
+button.onclick = randomCards;
+
