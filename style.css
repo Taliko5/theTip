@@ -29,7 +29,7 @@ a:hover {
 }
 
 #carouselExampleControls {
-  margin: 50px 0px 0px 0px;
+  margin: 10px 0px 0px 0px;
 }
 
 .item {
@@ -51,6 +51,10 @@ a:hover {
 .card-text {
   height: 5rem;
   font-size: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+   align-items: flex-start;
 }
 
 .dl {
@@ -112,7 +116,7 @@ a:hover {
 
   .carousel-control-next,
   .carousel-control-prev {
-    width: 30% !important;
+    width: 80% !important;
     height: 500px;
     max-height: 500px;
   }

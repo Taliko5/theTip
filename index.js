@@ -186,19 +186,24 @@ dataLists.map((el, idx, arr) => {
   const dllist = cardCopy.querySelector("#dlLink");
   const body1 = cardCopy.querySelector("#body1");
   const body2 = cardCopy.querySelector("#body2");
+
+  let rdmIdx = Math.floor(Math.random() * arr.length);
+  const rdmEl = arr[rdmIdx];
+  // console.log(rdmEl);
+
   // adding title and artist name
-  el.title !== ""
-    ? (title.innerHTML = `<h1> ${el.artist}  </h1><p/>  <h2>${el.title}  </h2>`)
-    : (title.innerHTML = `<h1>${el.artist}</h1>`);
+  rdmEl.title !== ""
+    ? (title.innerHTML = `<h1> ${rdmEl.artist}  </h1><p/>  <h2>${rdmEl.title}  </h2>`)
+    : (title.innerHTML = `<h1>${rdmEl.artist}</h1>`);
 
   // adding images
-  img.setAttribute("src", `${el.mainImg}`);
+  img.setAttribute("src", `${rdmEl.mainImg}`);
   // adding dl images
-  el.dlPc !== "" && el.dlPhone !== ""
-    ? (dllist.innerHTML = `<h1><a href=${el.dlPc} download>DL(PC)</a> <a href=${el.dlPhone} download>DL(smartPhone)</a></h1>`)
-    : el.dlPc === ""
-    ? (dllist.innerHTML = `<h1><a href=${el.dlPhone} download>DL(smartPhone)</a></h1>`)
-    : (dllist.innerHTML = `<h1><a href=${el.dlPc} download>DL(PC)</a></h1>`);
+  rdmEl.dlPc !== "" && rdmEl.dlPhone !== ""
+    ? (dllist.innerHTML = `<h1><a href=${rdmEl.dlPc} download>DL(PC)</a> <a href=${rdmEl.dlPhone} download>DL(smartPhone)</a></h1>`)
+    : rdmEl.dlPc === ""
+    ? (dllist.innerHTML = `<h1><a href=${rdmEl.dlPhone} download>DL(smartPhone)</a></h1>`)
+    : (dllist.innerHTML = `<h1><a href=${rdmEl.dlPc} download>DL(PC)</a></h1>`);
 
   body1.appendChild(title);
   body1.appendChild(img);
@@ -206,7 +211,7 @@ dataLists.map((el, idx, arr) => {
 
   const carousel = document.querySelector(".carousel-inner");
   // document.body.appendChild(cardCopy)
-  console.log(carousel);
-  Math.floor(Math.random * arr.length);
+  // console.log(carousel);
+
   carousel.insertBefore(cardCopy, carousel.children[2]);
 });
