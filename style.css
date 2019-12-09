@@ -110,8 +110,9 @@ a:hover {
 
   .carousel-control-next,
   .carousel-control-prev {
-    height: 450px;
-    max-height: 450px;
+    width: 30% !important;
+    height: 500px;
+    max-height: 500px;
   }
 
   .text {
@@ -119,9 +120,17 @@ a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     font-size: 1.5rem;
   }
+
+  }
+.card-text {
+  margin-bottom: 60px;
+}
+
+#slideImg {
+  width: 600px;
+}
 
   .space {
     height: 900px;
@@ -129,12 +138,5 @@ a:hover {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-  }
-
-  .carousel-control-next,
-  .carousel-control-prev {
-    width: 80% !important;
-    height: 500px;
-    max-height: 500px;
   }
 }

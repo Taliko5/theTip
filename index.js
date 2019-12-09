@@ -155,14 +155,14 @@ const dataLists = [
     title: "",
     artist: 'Punch Viratmalee',
     mainImg: './img/slidesImg/thumb_600_Viratmalee_Punch-untitled_01.png',
-    dl: '/img/dlImg/Punch_Viratmalee/img.zip',
+    dl: '/img/dlImg/Punch_Viratmalee/Viratmalee_Punch-untitled_01.jpg'
   },
   {
     title: "",
     artist: 'Punch Viratmalee',
     mainImg: './img/slidesImg/thumb_600_Viratmalee_Punch-untitled_02.png',
-    dl: '/img/dlImg/Punch_Viratmalee/img.zip',
-  },
+    dl: '/img/dlImg/Punch_Viratmalee/Viratmalee_Punch-untitled_02.jpg'
+  }
 ];
 
 dataLists.map((el, idx, arr) => {
