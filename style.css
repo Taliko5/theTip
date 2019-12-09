@@ -128,8 +128,13 @@ a:hover {
   margin-bottom: 60px;
 }
 
+#artistName img {
+  width:100%;
+}
+
 #slideImg {
-  width: 600px;
+  height: 480px;
+  width: auto;
 }
 
   .space {
