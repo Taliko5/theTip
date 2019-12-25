@@ -165,34 +165,71 @@ const dataLists = [
   }
 ];
 
-dataLists.map((el, idx, arr) => {
-  const card = document.getElementById("cardSet");
-  const cardCopy = card.cloneNode(true);
-  const title = cardCopy.querySelector("#artistName");
-  const img = cardCopy.querySelector("#slideImg");
-  const dllist = cardCopy.querySelector("#dlLink");
-  const body1 = cardCopy.querySelector("#body1");
-  const body2 = cardCopy.querySelector("#body2");
+// create an array of the index number
+// const shuffleArray = (array) => {
+//   const newArr = [];
+//   for (var i = array.length - 1; i > 0; i++) {
+//     var j = Math.floor(Math.random() * (i + 1));
+   
+//     newArr.push(array[j])
+    
+//   }
+//   return (uniqueArr = newArr);
+// }
 
-  let rdmIdx = Math.floor(Math.random() * arr.length);
-  const rdmEl = arr[rdmIdx];
+// const randomLists = shuffleArray(dataLists);
+
+const randomLists = [];
+const min = 0;
+const max = dataLists.length - 1;
+
+  const intRandom = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min; 
+  };
+
+for (i = min; i <= max; i++) {
+  while (true) {
+    const tmp = intRandom(min, max);
+    if (!randomLists.includes(dataLists[tmp])){
+      randomLists.push(dataLists[tmp]);
+      break;
+    }
+  }
+}
+ console.log(randomLists);
+
+
+
+
+randomLists.map((el, idx, arr) => {
+  const card = document.getElementById('cardSet');
+  const cardCopy = card.cloneNode(true);
+  const title = cardCopy.querySelector('#artistName');
+  const img = cardCopy.querySelector('#slideImg');
+  const dllist = cardCopy.querySelector('#dlLink');
+  const body1 = cardCopy.querySelector('#body1');
+  const body2 = cardCopy.querySelector('#body2');
+
+  // let rdmIdx = Math.floor(Math.random() * arr.length);
+
+  const rdmEl = arr[idx];
   // console.log(rdmEl);
 
   // adding title and artist name
-  rdmEl.title !== ""
+  rdmEl.title !== ''
     ? (title.innerHTML = `<h1> ${rdmEl.artist}  </h1><p/>  <h2>${rdmEl.title}  </h2>`)
     : (title.innerHTML = `<h1>${rdmEl.artist}</h1>`);
 
   // adding images
-  img.setAttribute("src", `${rdmEl.mainImg}`);
+  img.setAttribute('src', `${rdmEl.mainImg}`);
   // adding dl images
-    dllist.innerHTML = `<h1><a href=${rdmEl.dl} download >download</a></h1>`;
+  dllist.innerHTML = `<h1><a href=${rdmEl.dl} download >download</a></h1>`;
 
   body1.appendChild(title);
   body1.appendChild(img);
   body2.appendChild(dllist);
 
-  const carousel = document.querySelector(".carousel-inner");
+  const carousel = document.querySelector('.carousel-inner');
   // document.body.appendChild(cardCopy)
   // console.log(carousel);
 
